@@ -5,17 +5,25 @@ const listUl = listDiv.querySelector("ul");
 const lis = listUl.children; 
 const firstListItem = listUl.firstElementChild;
 const lastListItem = listUl.lastElementChild;
+const remove = document.querySelector("button.removeItemButton");
+var deleteButton = $("<button/>").addClass("removeItemButton").text("Delete");
 
+
+$(function(){
 $("#addItemButton").on("click", function(){
-  let value = $(this).val(); 
+  let value = $("#newItemInput").val();
+
+  
+$(".unList").append("<li>value</li>" , remove);
+  });  
 });
 
-$("#list .unList").val(newItemInput)
+$("ul").on("click",".Remove", function(){
+  $(this).closest("li").remove();
+  
+})
 
-$(".unList .remove").on("click" function(){
-  if(event.target.tagName == "BUTTON"){
-    if(event.target.tagName == "REMOVE"){
-      
-    }
-  }
-});
+
+
+
+
